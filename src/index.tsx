@@ -1,10 +1,10 @@
-import { useState } from "react";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { Rank } from "./types/types";
+import { cards } from "./cards";
 
 function App() {
-  console.log(Rank["ace"]);
+  console.log(cards);
 
   return (
     <div>
