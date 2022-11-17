@@ -1,0 +1,16 @@
+.Cards {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Card {
+  --width: 100px;
+  width: var(--width);
+  height: calc(var(--width) * 1.56);
+  border: 1px solid gray;
+  border-radius: 10px;
+}
