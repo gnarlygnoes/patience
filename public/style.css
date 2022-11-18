@@ -8,9 +8,23 @@
 }
 
 .Card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   --width: 100px;
   width: var(--width);
   height: calc(var(--width) * 1.56);
   border: 1px solid gray;
   border-radius: 10px;
+}
+
+.Card-rank {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.Suit {
+  font-size: 30px;
 }

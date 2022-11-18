@@ -4,12 +4,10 @@ import { cards } from "./card-data";
 import { Card } from "./card";
 
 function App() {
-  console.log(cards);
-
   return (
     <div className="Cards">
       {cards.map((card) => (
-        <Card key={card.rank + card.suit.name} />
+        <Card key={card.rank + card.suit.name} card={card} />
       ))}
     </div>
   );
