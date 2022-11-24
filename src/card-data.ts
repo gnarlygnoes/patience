@@ -25,3 +25,32 @@ for (let i = 0; i < 13; i++) {
     rank: Types.Rank[i] as unknown as Types.Rank,
   });
 }
+
+export function shuffleCards(cards: readonly Types.Card[]): Types.Card[] {
+  const shuffledCards: Types.Card[] = [];
+
+  let remainingCards: Types.Card[] = [...cards];
+
+  while (remainingCards.length > 0) {
+    const result = pickRandomCard(remainingCards);
+
+    shuffledCards.push(result.card);
+    remainingCards = result.remainingCards;
+  }
+
+  return shuffledCards;
+}
+
+function pickRandomCard(cards: Types.Card[]): {
+  remainingCards: Types.Card[];
+  card: Types.Card;
+} {
+  const cardIndex = Math.round(Math.random() * cards.length - 1);
+
+  const card = cards.splice(cardIndex, 1);
+
+  return {
+    remainingCards: cards,
+    card: card[0],
+  };
+}
