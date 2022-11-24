@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { Types } from "./types/types";
 
 export function Card(props: { card: Types.Card }) {
@@ -6,8 +7,23 @@ export function Card(props: { card: Types.Card }) {
     card: { rank, suit },
   } = props;
 
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    // console.log(suit, rank);
+    setIsFlipped(!isFlipped);
+  };
+
+  if (isFlipped) {
+    return (
+      <div className="Card" style={{ fontSize: 50 }} onClick={handleClick}>
+        🐙
+      </div>
+    );
+  }
+
   return (
-    <div className="Card">
+    <div className="Card" onClick={handleClick}>
       <div className="Card-rank">{rank}</div>
       <Suit suit={suit} />
     </div>
@@ -19,13 +35,13 @@ function Suit(props: { suit: Types.Suit }) {
 
   switch (props.suit.name) {
     case "hearts":
-      icon = "♥";
+      icon = "♥️";
       break;
     case "diamonds":
       icon = "♦️";
       break;
     case "spades":
-      icon = "♠";
+      icon = "♠️";
       break;
     case "clubs":
       icon = "♣️";
