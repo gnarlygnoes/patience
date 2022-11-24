@@ -13,21 +13,25 @@ export function getCards(): Types.Card[] {
       suit: hearts,
       rank: Types.Rank[i] as unknown as Types.Rank,
       facing: "down",
+      dragging: false,
     });
     cards.push({
       suit: diamonds,
       rank: Types.Rank[i] as unknown as Types.Rank,
       facing: "down",
+      dragging: false,
     });
     cards.push({
       suit: clubs,
       rank: Types.Rank[i] as unknown as Types.Rank,
       facing: "down",
+      dragging: false,
     });
     cards.push({
       suit: spades,
       rank: Types.Rank[i] as unknown as Types.Rank,
       facing: "down",
+      dragging: false,
     });
   }
 

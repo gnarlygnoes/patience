@@ -3,6 +3,7 @@ export namespace Types {
     suit: Suit;
     rank: Rank;
     facing: "up" | "down";
+    dragging: boolean;
   };
 
   export type Suit =

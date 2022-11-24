@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { action, observable } from "mobx";
 import { getCards, shuffleCards } from "./card-data";
 import { Types } from "./types/types";
 import Card = Types.Card;
@@ -27,6 +27,11 @@ export class Store {
   @observable.ref
   piles: Piles = [[], [], [], [], [], [], []];
 
+  constructor() {
+    this.startGame();
+  }
+
+  @action
   startGame() {
     const stock: Card[] = shuffleCards(getCards());
     const piles: Piles = [[], [], [], [], [], [], []];
@@ -43,6 +48,7 @@ export class Store {
       pile.push(card);
     });
 
-    console.log(stock, piles);
+    this.stock = stock;
+    this.piles = piles;
   }
 }

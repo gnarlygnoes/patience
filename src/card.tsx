@@ -4,7 +4,7 @@ import { Types } from "./types/types";
 
 export function Card(props: { card: Types.Card }) {
   const {
-    card: { rank, suit },
+    card: { rank, suit, facing },
   } = props;
 
   const [isFlipped, setIsFlipped] = useState(false);
@@ -14,7 +14,7 @@ export function Card(props: { card: Types.Card }) {
     setIsFlipped(!isFlipped);
   };
 
-  if (isFlipped) {
+  if (facing === "down") {
     return (
       <div className="Card" style={{ fontSize: 50 }} onClick={handleClick}>
         🐙
