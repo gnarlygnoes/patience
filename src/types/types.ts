@@ -2,6 +2,7 @@ export namespace Types {
   export type Card = {
     suit: Suit;
     rank: Rank;
+    facing: "up" | "down";
   };
 
   export type Suit =
