@@ -1,6 +1,7 @@
+import "./card.css";
 import * as React from "react";
 import { useState } from "react";
-import { Types } from "./types/types";
+import { Types } from "../../types/types";
 
 export function Card(props: { card: Types.Card }) {
   const {

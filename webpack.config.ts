@@ -1,6 +1,5 @@
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import type { Configuration } from "webpack";
-import * as path from "path";
 
 const devServer: DevServerConfiguration = {};
 
@@ -23,6 +22,10 @@ const config: Configuration = {
         test: /\.js$/,
         enforce: "pre",
         use: ["source-map-loader"],
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

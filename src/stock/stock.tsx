@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import * as React from "react";
 import { Store } from "../store";
-import { Card } from "../card";
+import { Card } from "../game-area/card/card";
 
 interface StackProps {
   store: Store;
