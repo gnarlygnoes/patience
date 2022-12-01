@@ -1,3 +1,8 @@
+body {
+  --cardWidth: 100px;
+  --cardHeight: calc(var(--cardWidth) * 1.56);
+}
+
 .Card-rank {
   position: absolute;
   top: 5px;
@@ -6,10 +11,4 @@
 
 .Suit {
   font-size: 30px;
-}
-
-.Stock {
-  position: absolute;
-  left: 30px;
-  top: 30px;
 }

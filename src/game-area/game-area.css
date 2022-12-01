@@ -1,4 +1,18 @@
 .GameArea {
   position: fixed;
-  inset: 0;
+  right: 0;
+  left: 0;
+  top: 10px;
+
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  gap: 10px;
+
+  align-items: center;
+  justify-content: center;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
 }
