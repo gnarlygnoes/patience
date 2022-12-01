@@ -1,30 +1,39 @@
 import "./card.css";
 import * as React from "react";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import { Types } from "../../types/types";
 
-export function Card(props: { card: Types.Card }) {
+interface CardProps {
+  card: Types.Card;
+  style?: CSSProperties;
+}
+
+export function Card(props: CardProps) {
   const {
+    style = {},
     card: { rank, suit, facing },
   } = props;
 
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
-    // console.log(suit, rank);
     setIsFlipped(!isFlipped);
   };
 
   if (facing === "down") {
     return (
-      <div className="Card" style={{ fontSize: 50 }} onClick={handleClick}>
+      <div
+        className="Card"
+        style={{ fontSize: 50, ...style }}
+        onClick={handleClick}
+      >
         🐙
       </div>
     );
   }
 
   return (
-    <div className="Card" onClick={handleClick}>
+    <div className="Card" onClick={handleClick} style={{ ...style }}>
       <div className="Card-rank">{rank}</div>
       <Suit suit={suit} />
     </div>

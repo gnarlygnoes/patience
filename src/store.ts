@@ -3,6 +3,9 @@ import { getCards, shuffleCards } from "./card-data";
 import { Types } from "./types/types";
 import Card = Types.Card;
 
+export const cardWidth = 100;
+export const cardHeight = 156;
+
 type Piles = [Card[], Card[], Card[], Card[], Card[], Card[], Card[]];
 
 export class Store {

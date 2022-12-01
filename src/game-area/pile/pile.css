@@ -1,2 +1,4 @@
 .Pile {
+  position: relative;
+  width: var(--cardWidth);
 }

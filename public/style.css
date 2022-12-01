@@ -1,4 +1,5 @@
 body {
+  background: #ff9200;
   --cardWidth: 100px;
   --cardHeight: calc(var(--cardWidth) * 1.56);
 }
