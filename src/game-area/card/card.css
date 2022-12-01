@@ -8,5 +8,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.13);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.13), 0 0 1px rgba(0, 0, 0, 0.43);
+}
+
+.Card-back {
+  background: #77679a;
 }

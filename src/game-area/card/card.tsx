@@ -23,7 +23,7 @@ export function Card(props: CardProps) {
   if (facing === "down") {
     return (
       <div
-        className="Card"
+        className="Card Card-back"
         style={{ fontSize: 50, ...style }}
         onClick={handleClick}
       >
