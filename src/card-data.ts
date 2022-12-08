@@ -57,7 +57,7 @@ function pickRandomCard(cards: Types.Card[]): {
   remainingCards: Types.Card[];
   card: Types.Card;
 } {
-  const cardIndex = Math.round(Math.random() * cards.length - 1);
+  const cardIndex = Math.round(random() * cards.length - 1);
 
   const card = cards.splice(cardIndex, 1);
 
@@ -65,4 +65,10 @@ function pickRandomCard(cards: Types.Card[]): {
     remainingCards: cards,
     card: card[0],
   };
+}
+
+let seed = 1;
+function random() {
+  const x = Math.sin(seed++) * 10000;
+  return x - Math.floor(x);
 }

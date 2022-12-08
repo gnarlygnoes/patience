@@ -39,4 +39,8 @@ export namespace Types {
     queen,
     king,
   }
+
+  export function makeCardId(card: Card): string {
+    return `${card.suit}-${card.rank}`;
+  }
 }
