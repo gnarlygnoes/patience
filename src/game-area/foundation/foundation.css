@@ -1,2 +1,7 @@
 .Foundation {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+
+  border: 1px solid grey;
+  border-radius: 10px;
 }

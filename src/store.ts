@@ -13,10 +13,10 @@ export class Store {
   cards = shuffleCards(getCards());
 
   @observable.ref
-  stock: Card[] = [];
+  stockPile: Card[] = [];
 
   @observable.ref
-  waste: Card[] = [];
+  wastePile: Card[] = [];
 
   @observable.ref
   foundation1: Card[] = [];
@@ -51,7 +51,11 @@ export class Store {
       pile.push(card);
     });
 
-    this.stock = stock;
+    this.stockPile = stock;
     this.piles = piles;
+
+    const card = stock.pop()!;
+    card.facing = "up";
+    this.wastePile.push(card);
   }
 }

@@ -1,9 +1,10 @@
 import "./game-area.css";
 import * as React from "react";
-import { Stock } from "./stock/stock";
+import { StockPile } from "./stock/stock-pile";
 import { Store } from "../store";
 import { Foundation } from "./foundation/foundation";
 import { Pile } from "./pile/pile";
+import { WastePile } from "./waste-pile/waste-pile";
 
 interface GameAreaProps {
   store: Store;
@@ -14,8 +15,8 @@ export function GameArea(props: GameAreaProps) {
 
   return (
     <div className="GameArea">
-      <Stock store={store} />
-      <div />
+      <StockPile store={store} />
+      <WastePile store={store} />
       <div />
       <Foundation store={store} />
       <Foundation store={store} />

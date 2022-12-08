@@ -8,18 +8,18 @@ interface StackProps {
   store: Store;
 }
 
-export const Stock = observer((props: StackProps) => {
+export const StockPile = observer((props: StackProps) => {
   const {
-    store: { stock },
+    store: { stockPile },
   } = props;
 
-  console.log("Stock", stock);
+  console.log("Stock", stockPile);
 
-  if (stock.length === 0) return null;
+  if (stockPile.length === 0) return null;
 
   return (
-    <div className="Stock">
-      <Card card={stock[stock.length - 1]} />
+    <div className="StockPile">
+      <Card card={stockPile[stockPile.length - 1]} />
     </div>
   );
 });
